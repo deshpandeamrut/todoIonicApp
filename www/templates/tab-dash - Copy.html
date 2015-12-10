@@ -1,0 +1,53 @@
+<ion-view view-title="To DO">
+	<ion-content class="padding">
+		<div class="list">
+			<form ng-submit="submittodo()">
+				<label class="item item-input">
+					<input ng-model="search.newtodotext" required type="text" placeholder="Add new todo ">
+					</label>
+				</form>
+			</div>
+			<md-input-container class="todoformwrapper">
+                    <label>Add new to do</label>
+                    <input ng-model="newtodotext" required  type="text" >
+                </md-input-container>
+			
+			
+			<div id="todo">
+				<div>
+
+					<div>
+
+						<ion-list ng-repeat="todo in todos track by $index">
+
+							<ion-checkbox ng-click="change(todo)" ng-model="todo.checked" ng-show="!todo.checked">{{todo.title}}</ion-checkbox>
+
+						</ion-list>
+
+						<!-- <div  class="todolist" ng-repeat="todo in todos track by $index">
+		<input type="checkbox" ng-model="todo.checked" ng-show="!todo.checked">
+            <label class="box-one"   ng-show="!todo.checked"  ng-click="change(todo)">{{todo.title}}</label>
+                   
+				
+        </div> -->
+						<div class="item item-divider">
+							Ticked
+						</div>
+						<ion-list ng-repeat="todo in todos track by $index">
+
+							<ion-checkbox ng-model="todo.checked" ng-show="todo.checked" ng-click="change(todo)">{{todo.title}}</ion-checkbox>
+
+						</ion-list>
+
+						<!-- <div  class="todolist" ng-repeat="todo in todos track by $index">
+		<input type="checkbox" ng-model="todo.checked" ng-show="todo.checked">
+            <label class="box-one"   ng-show="todo.checked"  ng-click="change(todo)">
+                 {{todo.title}}  
+				</label>
+        </div> -->
+					</div>
+				</div>
+
+			</ion-content>
+		</ion-view>
+		

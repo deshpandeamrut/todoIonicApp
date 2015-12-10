@@ -1,0 +1,20 @@
+/* Empty. Add your own CSS if you like */
+.padding{
+    width:100%;
+}
+.formWrapper{
+    width:100%;
+}
+.todoformwrapper{
+    width:100%;
+}
+
+.divider{
+    margin-bottom: 10px;
+}
+.material-icons{
+    font-size: 22px;
+}
+.linethrough{
+    text-decoration: line-through;
+}

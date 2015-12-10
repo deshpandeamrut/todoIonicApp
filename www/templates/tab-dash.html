@@ -1,0 +1,58 @@
+<!--<ion-view view-title="To Do">-->
+<ion-header-bar class="bar bar-positive"><h1 class="title">To Do</h1></ion-header-bar>
+<ion-content class="padding">
+    <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="doRefresh()">
+    </ion-refresher>
+    <div>
+        <div class="list formWrapper">
+            <form ng-submit="submittodo()">
+                <!--<input type="text" ng-model="newtodotext" class="form-control">-->
+                <md-input-container class="todoformwrapper">
+                    <label>Add new to do</label>
+                    <input ng-model="search.newtodotext" required  type="text" >
+                </md-input-container>
+            </form>
+        </div>
+        <div>
+            <div  class="" ng-repeat="todo in todos track by $index">
+                <md-checkbox  class="box-one" ng-model="todo.checked" aria-label="Finished?" ng-show="!todo.checked"  ng-click="change(todo)">
+                    {{todo.title}}  
+                    <md-menu>
+                    <!-- Trigger element is a md-button with an icon -->
+                    <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+                        <i class="material-icons">settings</i>
+                    </md-button>
+                    <md-menu-content>
+                        <md-menu-item><md-button ng-click="doSomething()"><i class="material-icons">edit</i>Edit</md-button></md-menu-item>
+                        <md-menu-item><md-button ng-click="deleteTodo(todo.id)"><i class="material-icons">delete</i>Delete</md-button></md-menu-item>
+                        <md-menu-item><md-button><i class="material-icons">info</i>{{todo.time}}</md-button></md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+
+                </md-checkbox>
+                            </div>
+
+            <md-divider class="divider"></md-divider>
+            <div  class="" ng-repeat="todo in todos track by $index">
+                <md-checkbox class="box-one todo linethrough" ng-model="todo.checked" aria-label="Finished?" ng-show="todo.checked"  ng-click="change(todo)">
+                    {{todo.title}}   
+                    
+                    <md-menu>
+                    <!-- Trigger element is a md-button with an icon -->
+                    <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+                        <i class="material-icons">settings</i>
+                    </md-button>
+                    <md-menu-content>
+                        <md-menu-item><md-button ng-click="doSomething()"><i class="material-icons">edit</i>Edit</md-button></md-menu-item>
+                        <md-menu-item><md-button ng-click="deleteTodo(todo.id)"><i class="material-icons">delete</i>Delete</md-button></md-menu-item>
+                        <md-menu-item><md-button><i class="material-icons">info</i>{{todo.time}}</md-button></md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                </md-checkbox>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<!--</ion-view>-->
